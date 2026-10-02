@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-bg: #0a0a0a;
+  --color-fg: #fafafa;
+  --color-muted: #a1a1a1;
+  --color-faint: #6e6e6e;
+  --color-line: #262626;
+  --color-line-strong: #404040;
+  --animate-fade: fade 180ms ease-out both;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: none; }
+}
+
+html {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv11", "ss01";
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #fafafa;
+  color: #0a0a0a;
+}
+
+:focus-visible {
+  outline: 1px solid #fafafa;
+  outline-offset: 2px;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: var(--color-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0ms !important; transition-duration: 0ms !important; }
+}
